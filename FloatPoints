@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class FloatLoop {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        float[] values = new float[5];
+        int count = 0;
+        float total = 0;
+        float max = Float.NEGATIVE_INFINITY;
+        float min = Float.POSITIVE_INFINITY;
+
+        // Loop to read five gloats from user
+        while (count < 5) {
+            System.out.print("Enter a float please ");
+            float value = scanner.nextFloat();
+            values[count] = value;
+            total += value;
+            
+            // Use Math function to update the min and max values
+            max = Math.max(max, value);
+            min = Math.min(min, value);
+
+            count++;
+        }
+
+        // Calculate average
+        float average = total / 5;
+
+        // Calculate interest on total at 20%
+        float interest = total * 0.20f;
+
+        // Print the results
+        System.out.println("the total is " + total);
+        System.out.println("the average is " + average);
+        System.out.println("Maximum: " + max);
+        System.out.println("Minimum: " + min);
+        System.out.println("the interest on total at 20%: " + interest);
+
+        scanner.close();
+    }
+}
